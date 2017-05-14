@@ -22,6 +22,7 @@ unix_host = "/etc/hosts"
 message = ''
 data = ''
 sysstr=''
+cmd =''
 
 
 def download (url,numretries=5):
@@ -40,7 +41,7 @@ def download (url,numretries=5):
 
 def show_result(how, cmds):
     global message
-    result = os.system(cmd)
+    os.system(cmd)
     if how == 1:
             message.set("连接外网成功,重启浏览器,请使用https访问外网")
     else:
@@ -48,6 +49,7 @@ def show_result(how, cmds):
 
 def cnt():
     global sysstr
+    global cmd
     sysstr = platform.system()
     if sysstr=="Windows":
         if os.path.exists(win_host+'.bak'):
@@ -89,6 +91,7 @@ def cnt():
         show_result(1, cmd)
         
 def back():
+    global sysstr
     if sysstr =="Windows":
         if os.path.exists(win_host+'.bak'):
             os.remove(win_host)
