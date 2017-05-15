@@ -1,8 +1,30 @@
 # -*- coding: utf-8 -*-
 """
+                   _ooOoo_
+                  o8888888o
+                  88" . "88
+                  (| -_- |)
+                  O\  =  /O
+               ____/`---'\____
+             .'  \\|     |//  `.
+            /  \\|||  :  |||//  \
+           /  _||||| -:- |||||-  \
+           |   | \\\  -  /// |   |
+           | \_|  ''\---/''  |   |
+           \  .-\__  `-`  ___/-. /
+         ___`. .'  /--.--\  `. . __
+      ."" '<  `.___\_<|>_/___.'  >'"".
+     | | :  ` - `.;`\ _ /`;.`/ - ` : | |
+     \  \ `-.   \_ __\ /__ _/   .-` /  /
+======`-.____`-.___\_____/___.-`____.-'======
+                   `=---='
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            佛祖保佑       永无BUG
+            
 Created on Sat May 13 22:49:40 2017
 
 @author: njcx
+
 """
 from Tkinter import *
 import tkFont
@@ -52,10 +74,13 @@ def cnt():
     global cmd
     sysstr = platform.system()
     if sysstr=="Windows":
-        if os.path.exists(win_host+'.bak'):
-            pass
+       # if os.path.exists(win_host+'.bak'):
+           # pass
         if os.path.exists(win_host):
-            os.rename(win_host,win_host+'.bak')
+            if os.path.exists(win_host+'.bak'):
+                pass
+            else:            
+                os.rename(win_host,win_host+'.bak')
         download("https://raw.githubusercontent.com/njcx/gfw-data/master/hosts_win.DAT")
         
         with open(win_host, 'w+') as f:
@@ -65,10 +90,11 @@ def cnt():
         show_result(1, cmd)
 
     elif sysstr =="Linux":
-        if os.path.exists(unix_host+'.bak'):
-            pass
         if os.path.exists(unix_host):
-            os.rename(unix_host,unix_host+'.bak')
+            if os.path.exists(unix_host+'.bak'):
+                pass
+            else:            
+                os.rename(unix_host,unix_host+'.bak')
         download("https://raw.githubusercontent.com/njcx/gfw-data/master/hosts_unix.DAT")
         
         with open(unix_host, 'w+') as f:
@@ -78,10 +104,14 @@ def cnt():
         show_result(1, cmd)
         
     else:
-        if os.path.exists(unix_host+'.bak'):
-            pass
-        if os.path.exists(unix_host):
-            os.rename(unix_host,unix_host+'.bak')
+       # if os.path.exists(win_host+'.bak'):
+           # pass
+        if os.path.exists(win_host):
+            if os.path.exists(win_host+'.bak'):
+                pass
+            else:            
+                os.rename(win_host,win_host+'.bak')
+                
         download("https://raw.githubusercontent.com/njcx/gfw-data/master/hosts_win.DAT")
         
         with open('/etc/hosts', 'w+') as f:
