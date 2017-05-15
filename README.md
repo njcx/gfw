@@ -7,7 +7,7 @@
 
 就像这样 " https://www.google.com.hk/ "
 
-我的博客 [nJcx's blog](www.njcxs.cc)
+我的博客 [nJcx's blog](http://www.njcxs.cc)
 
 
 使用python2.7, 然后 " python gfw.py ", 然后连接就行
