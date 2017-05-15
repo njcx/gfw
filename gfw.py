@@ -156,7 +156,7 @@ def main():
     xx.geometry('0x0')
     global message
     message = StringVar()
-    message.set("一次连接,永久使用",)
+    message.set("定期点击连接,刷新服务器列表",)
     
     ft = tkFont.Font(family="Arial", size=10, weight=tkFont.BOLD)
     bm = PhotoImage(file='./timg.gif')
