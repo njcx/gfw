@@ -76,11 +76,11 @@ def cnt():
     if sysstr=="Windows":
        # if os.path.exists(win_host+'.bak'):
            # pass
-        #if os.path.exists(win_host):
-            #if os.path.exists(win_host+'.bak'):
-                #pass
-            #else:            
-                #os.rename(win_host,win_host+'.bak')
+        if os.path.exists(win_host):
+            if os.path.exists(win_host+'.bak'):
+                pass
+            else:            
+                os.rename(win_host,win_host+'.bak')
         download("https://raw.githubusercontent.com/njcx/gfw-data/master/hosts_win.DAT")
         
         with open(win_host, 'w+') as f:
